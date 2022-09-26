@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercera forma de integrar codigo</title>
+    <style>
+        .miBoton {
+            padding: 10px;
+            border: 1px solid burlywood;
+            background: gray;
+            border-radius: 5px;
+            font-size: 16px;
+            color: white;
+        }
+
+        .miBoton:hover {
+            padding: 10px;
+            border: 1px solid burlywood;
+            background: gray;
+            border-radius: 5px;
+            font-size: 16px;
+            color: black;
+        }
+
+        .miBoton:active {
+            padding: 10px;
+            border: 1px solid burlywood;
+            background: gray;
+            border-radius: 5px;
+            font-size: 16px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Codigo javascript dentro de html -->
+        <!-- METODO NO RECOMENDADO -->
+    <p onclick="alert('he hecho click'); return false;">Hazme Click</p>
+
+    <button 
+        class="miBoton" 
+        onclick="document.write('Hecho click en boton'); return true;"
+    >Load Data</button>
+    <br>
+</body>
+</html>
