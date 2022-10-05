@@ -1,5 +1,5 @@
 
-function letraCapiFraseComple(cadenaConvertir){
+function letraCapiFraseSimple(cadenaConvertir){
 
     var resultado = "";
 
@@ -19,4 +19,30 @@ function letraCapiFraseComple(cadenaConvertir){
     return resultado;
 }
 
-console.log(letraCapiFraseComple(""));
+function letraCapiFraseCompleja(cadenaConvertir){
+
+    var primeraLetra;
+    var frase = "";
+    var mayus;
+    var resultado;
+
+    // Dividir la frase en palabras
+    var palabras = cadenaConvertir.split(" ");
+
+    // Recorremos el array de palabras
+    for (var i in palabras){
+        primeraLetra = palabras[i].charAt(0);
+
+        // Convierto a mayusculas
+        mayus = primeraLetra.toUpperCase();
+
+        // Palabra ya capitalizada
+        resultado = mayus.concat(palabras[i].substring(1));
+
+        frase += resultado + " ";
+    }
+
+    return frase;
+}
+
+console.log(letraCapiFraseCompleja("hola mundo mundial"));
