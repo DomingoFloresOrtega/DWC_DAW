@@ -45,4 +45,18 @@ function letraCapiFraseCompleja(cadenaConvertir){
     return frase;
 }
 
+function letraCapiFraseComplejaSinSplit(cadenaConvertir){
+
+    var primeraLetra;
+    var frase = "";
+    var mayus;
+    var resultado;
+
+    for (var i = 0, long = cadenaConvertir.length; i < long; i++){
+        
+    }
+
+    return frase;
+}
+
 console.log(letraCapiFraseCompleja("hola mundo mundial"));
