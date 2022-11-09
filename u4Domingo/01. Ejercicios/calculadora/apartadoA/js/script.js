@@ -1,42 +1,13 @@
 /*
 DECLARACIÓN DE VARIABLES
 */
-var errorGlobal = "Sin errores"; // error global
-var opToUse;
-
-// crear las diferentes operaciones
-function crearOperacion(valor1, valor2, opToUse){
-    var resultadoCalculos; // resultado operaciones
-
-    switch(opToUse){
-        case "suma":
-            resultadoCalculos = valor1 + valor2; // suma de valores
-            break;
-
-        case "resta":
-            resultadoCalculos = valor1 - valor2; // resta de valores
-            break;
-        
-        case "multiplicacion":
-            resultadoCalculos = valor1 * valor2; // multiplicacion de valores
-            break;
-        
-        case "division":
-            resultadoCalculos = valor1 / valor2; // division de valores
-            break;
-        
-        case "potencia":
-            resultadoCalculos = valor1 ^ valor2; // potencia de valores
-            break;
-    }
-
-    return resultadoCalculos;
-}
+var errorGlobal = ""; // error global
 
 // calcular datos usando una funcion simple
 function manejadorBtnCalcula(e){
     var oper1 = 0; // variable 1
     var oper2 = 0; // variable 2
+    var opToUse; // variable para guardar operacion a usar
 
     // capturo operando 1
     oper1 = document.getElementById('primOperando');
@@ -51,15 +22,42 @@ function manejadorBtnCalcula(e){
     valorOperando2 = parseInt(valorOperando2); // convertido a numero entero
 
     // realizar la operacion
-
     var tmpResult = 0;
-    opToUse = document.formulario.selectOperacion.value;
+    var opToUse = document.formulario.selectOperacion.value;
+    var tmpOpToUse;
+
+    switch(opToUse){
+        case "suma":
+            tmpOpToUse = suma; // suma de valores
+            break;
+
+        case "resta":
+            tmpOpToUse = resta; // resta de valores
+            break;
+
+        case "producto":
+            tmpOpToUse = producto; // producto de valores
+            break;
+        
+        case "multiplicacion":
+            tmpOpToUse = multiplicacion; // multiplicacion de valores
+            break;
+        
+        case "division":
+            tmpOpToUse = division; // division de valores
+            break;
+        
+        case "potencia":
+            tmpOpToUse = potencia; // potencia de valores
+            break;
+    }
 
     try {
        // si son valores numericos
         if (!isNaN(valorOperando1) && !isNaN(valorOperando2)) {
-            tmpResult = crearOperacion(valorOperando1, valorOperando2, opToUse);
+            tmpResult = crearOperacion(valorOperando1, valorOperando2, tmpOpToUse);
         } else {
+            // si no son valores numericos
             throw "Operador no valido";
         }
  
@@ -70,6 +68,7 @@ function manejadorBtnCalcula(e){
     // resultado
     resultadoCalculos = tmpResult;
 
+    // pinto resultado en documento
     document.getElementById('resultadoOp').innerHTML = resultadoCalculos;
     document.getElementById('error').innerHTML = "ERROR registrado: " + errorGlobal;
 

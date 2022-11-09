@@ -32,7 +32,7 @@ var crearOperacion = (valor1, valor2, opToUse) => {
 };
 
 // calcular datos usando una funcion con arrows
-var manejadorBtnCalcula = (e) => {
+var manejadorBtnCalcula = e => {
     var oper1 = 0; // variable 1
     var oper2 = 0; // variable 2
 
