@@ -1,0 +1,11 @@
+<div class="col-9">
+  <label for="search" class="col-9">Buscar:</label>
+  <input type="text" class="col-6" placeholder="Buscar gifs..." #txtquery (keyup.enter)="buscar(txtquery)">
+</div>
+
+<div class="col-12">
+  <h1>Mostrando resultados:</h1>
+  <div class="row">
+    <div class="col-4" *ngFor="let item of resultados"><img [src]="item.images.downsized_large.url" alt="Gif"></div>
+  </div>
+</div>
