@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UnViaje, IntObj, ElViaje, TipoRuta, Localizacion, Libro } from 'src/app/interfaces'; // usar archivos externos
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,9 @@ export class AppComponent {
   title = 'P1_ANGULAR';
 }
 
-interface UnViaje {
-  origen: string;
-  destino: string;
-  numDias: number;
-  paradas?: string[],
-  mostrarInfo: () => void;
-}
+// CLASE MIERCOLES 11 DE ENERO
+
+console.log('============ MIERCOLES 11 DE ENERO ============')
 
 // Constantes
 const unViaje = {
@@ -46,12 +43,6 @@ console.log(res);
 
 // Ejemplo 1
 
-interface IntObj {
-  a: string,
-  b: string,
-  c: number;
-}
-
 const nombreObj: IntObj = {
   a: 'primer valor',
   b: 'segundo valor',
@@ -66,20 +57,6 @@ function mostrarObjeto (o: IntObj) {
 mostrarObjeto(nombreObj);
 
 // Ejercicio 1
-
-interface ElViaje {
-  nombre: string,
-  origen: string,
-  destino: string,
-  ruta: TipoRuta,
-  mostrarDestino: () => string,
-  mostrarTransporte: () => string
-}
-
-interface TipoRuta {
-  transporte: string,
-  paradas: string[];
-}
 
 const elviaje = {
   nombre: 'Viaje fin de curso',
@@ -100,3 +77,43 @@ const elviaje = {
 const dest = elviaje.mostrarDestino();
 const trans = elviaje.mostrarTransporte();
 console.log(dest,trans);
+
+// Clase viernes 13 de enero
+
+console.log('========== VIERNES 13 DE ENERO ============')
+
+const libro: Libro = {
+  titulo: '1984',
+  autor: 'George Orwell',
+  anioPublicacion: 1950,
+  localizacion: {
+    estanteria: 5,
+    habitacion: 'biblioteca01',
+  }
+}
+
+// Desestructurar valores
+const { titulo:mititulo, autor:miautor, localizacion } = libro;
+const { estanteria } = localizacion;
+
+console.log('El titulo es: ', mititulo);
+console.log('El autor es: ', miautor);
+console.log('Está en la estanteria: ', estanteria);
+
+
+const array: string[] = ['enero','febrero','marzo'];
+
+const [ m1, m2, m3 ] = array;
+
+console.log('Valor 1: ', m1);
+console.log('Valor 2: ', m2);
+console.log('Valor 3: ', m3);
+
+// ====================== CLASE LUNES 16 DE ENERO ====================
+
+function tipoGenerico( arg ):string {
+  return arg;
+}
+
+let tipoNumero = tipoGenerico(123);
+let tipoString = tipoGenerico('Hola');
