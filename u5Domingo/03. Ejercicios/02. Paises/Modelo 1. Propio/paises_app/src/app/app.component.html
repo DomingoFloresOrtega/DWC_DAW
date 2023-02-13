@@ -1,0 +1,32 @@
+<div class="col-12">
+  <div class="row">
+    <div class="col-2">
+      <h1>Busquedas</h1>
+      <hr>
+      <ul class="list-group" style="list-style: none;">
+        <li><a routerLink="/paises"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              class="list-group-item"
+              >Por pais</a>
+        </li>
+
+        <li><a routerLink="/region"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="list-group-item">Por region</a>
+        </li>
+
+        <li><a routerLink="/capital"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="list-group-item">Por capital</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
