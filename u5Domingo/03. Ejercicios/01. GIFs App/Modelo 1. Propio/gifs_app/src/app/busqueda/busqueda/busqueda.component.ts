@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Gif, Gifsresponse } from './busqueda.interfaces';
-
+import { Gifsservice } from 'src/app/gifs/gifsservice.module.ts.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -10,7 +9,7 @@ import { Gif, Gifsresponse } from './busqueda.interfaces';
 })
 export class BusquedaComponent {
 
-  constructor( private http: HttpClient ){}
+  constructor( private gifService: Gifsservice ){}
 
   resultados:Gif[] = [];
 
@@ -23,17 +22,11 @@ export class BusquedaComponent {
     // Compruebo que obtiene texto
     console.log(txt.value);
 
+    // Obtengo datos
+    this.resultados = this.gifService.buscarGifs(txt.value);
+
     // Limpio texto
     txt.value = '';
-
-    // Obtengo datos
-    this.http.get<Gifsresponse>('https://api.giphy.com/v1/gifs/search?api_key=yGhLOEEGIflLvexLsJEHF2xHpNRqIh8j&q=sorpresa&limit=10')
-    .subscribe({
-      next:( resp:Gifsresponse ) => {
-        this.resultados = resp.data;
-        console.log(resp); //<-- mostramos la respuesta
-      }
-    })
   }
 
   // @ViewChild('txtquery') txtquery!:ElementRef<HTMLInputElement>; <-- otro metodo
