@@ -7,13 +7,15 @@ import { PaisComponent } from './app/pais/pais.component';
 import { RegionComponent } from './app/region/region.component';
 import { CapitalComponent } from './app/capital/capital.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DetallepaisComponent } from './app/pais/detallepais/detallepais.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaisComponent,
     RegionComponent,
-    CapitalComponent
+    CapitalComponent,
+    DetallepaisComponent
   ],
   imports: [
     BrowserModule,

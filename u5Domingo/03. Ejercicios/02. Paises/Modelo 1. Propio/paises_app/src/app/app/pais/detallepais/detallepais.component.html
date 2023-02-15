@@ -1,0 +1,30 @@
+<h1 class="mt-4" *ngFor="let item of resultados">Pais: {{item.name.common}}</h1>
+
+<div class="row" *ngFor="let item of resultados">
+  <div class="col-6">
+    <h1>Bandera</h1>
+    <img class = "img-fluid rounded" [src] = "item.flags.png" />
+  </div>
+
+  <div class="col-5">
+    <h1>Información</h1>
+    <ul class="list-group" *ngFor="let item of resultados">
+      <li class="list-group-item"><b>Población</b> {{item.population}}</li>
+      <li class="list-group-item"><b>Código numérico</b> {{item.ccn3}}</li>
+      <li class="list-group-item"><b>Código alpha3</b> {{item.cca3}}</li>
+      <li class="list-group-item"><b>Capital</b> {{item.capital}}</li>
+    </ul>
+  </div>
+</div>
+
+<h1 class="mt-4">Traducciones</h1>
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-primary me-2" *ngFor="let item of resultados">{{item.translations['ara'].common}}</button>
+    <button type="button" class="btn btn-primary me-2" *ngFor="let item of resultados">{{item.translations['fra'].common}}</button>
+    <button type="button" class="btn btn-primary me-2" *ngFor="let item of resultados">{{item.translations['pol'].common}}</button>
+    <button type="button" class="btn btn-primary me-2" *ngFor="let item of resultados">{{item.translations['spa'].common}}</button>
+    <button type="button" class="btn btn-primary me-2" *ngFor="let item of resultados">{{item.translations['tur'].common}}</button>
+  </div>
+</div>
+

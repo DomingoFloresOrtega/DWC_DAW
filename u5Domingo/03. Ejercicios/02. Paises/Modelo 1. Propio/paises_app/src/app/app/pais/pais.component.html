@@ -2,7 +2,11 @@
 <hr>
 <input type="text" class="form-control" #txtquery (keyup.enter)="buscar(txtquery)"/>
 <hr>
-<table class="table">
+<div class="alert alert-danger" role="alert" *ngIf="errores">
+  No se encontro ningun resultado
+</div>
+
+<table class="table" *ngIf="!errores">
   <thead>
     <tr>
       <th scope="col">#</th>

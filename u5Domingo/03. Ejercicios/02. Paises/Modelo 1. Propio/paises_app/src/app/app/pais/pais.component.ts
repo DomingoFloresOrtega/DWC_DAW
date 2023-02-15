@@ -14,6 +14,10 @@ export class PaisComponent {
     return this.countriesService.resultadosPais;
   };
 
+  get errores() {
+    return this.countriesService.errores;
+  }
+
   buscar( txt: HTMLInputElement ) {
 
     if (!txt.value) {
