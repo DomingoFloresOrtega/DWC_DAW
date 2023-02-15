@@ -17,16 +17,16 @@ export class AgregarComponent {
 
   constructor( private montesService: MontesService ){};
 
-  agregar(){
-    if( !this.nuevo.nombre.trim() || this.nuevo.altitud === 0 ) {
-      return;
-    }
+  // agregar(){
+  //   if( !this.nuevo.nombre.trim() || this.nuevo.altitud === 0 ) {
+  //     return;
+  //   }
 
-    this.montesService.agregarMonte( this.nuevo );
+  //   this.montesService.agregarMonte( this.nuevo );
 
-    this.nuevo = {
-      nombre: '',
-      altitud: 0
-    };
-  }
+  //   this.nuevo = {
+  //     nombre: '',
+  //     altitud: 0
+  //   };
+  // }
 }

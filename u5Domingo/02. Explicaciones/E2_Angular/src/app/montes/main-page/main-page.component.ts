@@ -13,7 +13,9 @@ export class MainPageComponent {
 
   constructor( private MontesService: MontesService) {}
 
-  agregarNuevoMonte( monte: Monte ) {
+  montes: Monte[] = []
+
+  agregar( monte: Monte ) {
     this.montes.push(monte);
   }
 }

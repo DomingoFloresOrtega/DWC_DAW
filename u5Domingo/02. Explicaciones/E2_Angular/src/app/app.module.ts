@@ -5,18 +5,24 @@ import { AppComponent } from './app.component';
 import { AppContador } from './contador/contador.component';
 import { ListaLibrosComponent } from './libros/lista-libros/lista-libros.component';
 import { MontesModule } from './montes/montes.module';
-import { ListadoMontesComponent } from './listado-montes/listado-montes.component';
+import { ListaMontesComponent } from './montes/lista-montes/lista-montes.component';
+import { RutasComponent } from './rutas/rutas.component';
+import { Router, RouterModule } from '@angular/router';
+import { FormreactivosComponent } from './formreactivos/formreactivos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppContador,
     ListaLibrosComponent,
-    ListadoMontesComponent
+    RutasComponent,
+    FormreactivosComponent
   ],
   imports: [
     BrowserModule,
-    MontesModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

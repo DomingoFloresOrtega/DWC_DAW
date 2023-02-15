@@ -2,5 +2,5 @@
 <hr>
 
 <ul>
-  <li *ngFor="let libro of libros; index as i">{{ i + 1 }} - {{ libro | titlecase }}</li>
+  <li *ngFor="let libro of libros; index as i"><a [routerLink]="['/libro',libro]">{{ i + 1 }} - {{ libro | titlecase }}</a></li>
 </ul>

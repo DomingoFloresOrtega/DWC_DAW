@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Monte } from '../interfaces/montes.interface.ts';
 
 @Component({
   selector: 'app-lista-montes',
@@ -9,8 +8,8 @@ import { Monte } from '../interfaces/montes.interface.ts';
 })
 export class ListaMontesComponent {
 
-  get montes() {
-    return this.montesService.montes;
-    
-  }
+  // get montes() {
+  //   return this.montesService.montes;
+
+  // }
 }
