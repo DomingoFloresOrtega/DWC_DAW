@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'pais/:id', component: DetallepaisComponent},
   { path: 'capital', component: CapitalComponent},
   { path: 'region', component: RegionComponent },
-  { path: '**', redirectTo: 'pais'}
+  { path: '**', redirectTo: 'paises'}
 ];
 
 @NgModule({

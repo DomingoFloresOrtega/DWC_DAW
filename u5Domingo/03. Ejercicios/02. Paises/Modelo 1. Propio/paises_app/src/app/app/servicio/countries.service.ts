@@ -16,6 +16,7 @@ export class CountriesService {
     this.http.get<Pais[]>(`https://restcountries.com/v3.1/name/${txt}`)
     .subscribe({
       next:( resp:Pais[] ) => {
+        this.errores = false;
         this.resultadosPais = resp;
         console.log(resp); //<-- mostramos la respuesta
       },
@@ -29,6 +30,7 @@ export class CountriesService {
     this.http.get<Pais[]>(`https://restcountries.com/v3.1/region/${txt}`)
     .subscribe({
       next:( resp:Pais[] ) => {
+        this.errores = false;
         this.resultadosPais = resp;
         console.log(resp); //<-- mostramos la respuesta
       },
@@ -42,6 +44,7 @@ export class CountriesService {
     this.http.get<Pais[]>(`https://restcountries.com/v3.1/capital/${txt}`)
     .subscribe({
       next:( resp:Pais[] ) => {
+        this.errores = false;
         this.resultadosPais = resp;
         console.log(resp); //<-- mostramos la respuesta
       },
@@ -55,6 +58,7 @@ export class CountriesService {
     this.http.get<Pais[]>(`https://restcountries.com/v3.1/alpha/${txt}`)
     .subscribe({
       next:( resp:Pais[] ) => {
+        this.errores = false;
         this.resultadosPais = resp;
         console.log(resp); //<-- mostramos la respuesta
       },
