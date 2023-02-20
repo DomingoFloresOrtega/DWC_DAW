@@ -11,7 +11,9 @@ export class BusquedaComponent {
 
   constructor( private gifService: Gifsservice ){}
 
-  resultados:Gif[] = [];
+  get resultados() {
+    return this.gifService.resultados; // obtengo resultados del servicio
+  }
 
   buscar( txt: HTMLInputElement ) {
 
@@ -23,7 +25,7 @@ export class BusquedaComponent {
     console.log(txt.value);
 
     // Obtengo datos
-    this.resultados = this.gifService.buscarGifs(txt.value);
+    this.gifService.buscarGifs(txt.value); // mando resultados al servicio
 
     // Limpio texto
     txt.value = '';

@@ -10,18 +10,12 @@ export class SidebarComponent {
 
   constructor( private gifService: Gifsservice ) {}
 
-  historial: string[] = [];
+  get historial() {
+    this.gifService.historial = JSON.parse(localStorage.getItem('historial')!); // obtengo localStorage
+    return this.gifService.historial;
+  }
 
-
-
-  // listarHistorial(){
-
-  //   this.gifService.historial = JSON.parse(localStorage.getItem('historial')!);
-
-  //   localStorage.setItem('historial', JSON.stringify(this.gifService.historial));
-
-  //   return this.gifService.historial;
-  // }
-
-
+  buscar(txt: string) { // cuidado con string y String
+    this.gifService.buscarGifs(txt);
+  }
 }
