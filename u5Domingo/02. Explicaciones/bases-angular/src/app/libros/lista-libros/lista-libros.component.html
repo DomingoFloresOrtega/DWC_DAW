@@ -1,0 +1,31 @@
+<h1>Lista de libros</h1>
+<hr>
+
+<div *ngIf="!libroid; else muestralibro">
+  <div *ngIf="libroBorrado; else noBorrado">
+    <h3>Libro borrado: <small>{{ libroBorrado }}</small></h3>
+  </div>
+
+  <ng-template #noBorrado>
+    <h3>No se a borrado ningún libro</h3>
+  </ng-template>
+
+
+  <button (click)="borrarLibro()">
+    Borrar Libro
+  </button>
+
+  <ul>
+    <li *ngFor="let libro of libros; index as i">
+      <a [routerLink]="['/libro', libro]">
+        {{ i + 1 }} - {{ libro | titlecase }}
+      </a>
+
+    </li>
+  </ul>
+
+</div>
+
+<ng-template #muestralibro>
+  <h3>{{ libroid }}</h3>
+</ng-template>

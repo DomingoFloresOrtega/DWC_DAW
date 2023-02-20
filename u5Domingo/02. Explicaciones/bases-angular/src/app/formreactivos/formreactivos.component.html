@@ -1,0 +1,106 @@
+<h2 class="p-3">Formularios reactivos</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <form (ngSubmit)="guardar()" [formGroup]="miFormulario">
+
+      <!-- Nombre -->
+      <div class="row">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+
+        <div class="col-sm-6">
+          <input type="text"
+                  class="form-control"
+                  formControlName="nombre">
+
+          <span class="form-text text-danger"
+                *ngIf="miFormulario.controls['nombre'].errors &&
+                miFormulario.controls['nombre'].touched">
+            No puede estar vacío y debe tener más de 5 caracteres
+          </span>
+        </div>
+      </div>
+
+          <!-- Nacimiento -->
+      <div class="row mt-3">
+          <label class="col-sm-3 col-form-label">Nacimiento</label>
+          <div class="col-sm-6">
+          <input type="number"
+                  class="form-control"
+                  formControlName="nacimiento">
+
+          <span class="form-text text-danger"
+                *ngIf="miFormulario.controls['nacimiento'].errors &&
+                miFormulario.controls['nacimiento'].touched">
+            No puede estar vacío y debe ser mayor que 1920
+          </span>
+
+        </div>
+
+        </div>
+
+        <div class="ml-5 col-6">
+        <div class="form-check">
+          <input class="form-check-input"
+                  type="radio"
+                  id="flexRadioDefault1"
+                  value="S"
+                  formControlName="tieneHijos">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Si
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input"
+                  type="radio"
+                  id="flexRadioDefault2"
+                  value="N"
+                  formControlName="tieneHijos">
+          <label class="form-check-label" for="flexRadioDefault2">
+            No
+          </label>
+        </div>
+        <span class="form-text text-danger"
+                *ngIf="miFormulario.controls['tieneHijos'].errors &&
+                miFormulario.controls['tieneHijos'].touched">
+            No puede estar vacío
+          </span>
+      </div>
+
+
+      <div class="row mt-3">
+        <div class="col-9">
+          <button class="btn btn-primary float-end"
+                  type="submit">
+            Guardar
+          </button>
+
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="mt-5">
+<span>Valido</span>
+<pre>{{ miFormulario.valid }}</pre>
+
+<span>Pristine</span>
+<pre>{{ miFormulario.pristine }}</pre>
+
+<span>Touched</span>
+<pre>{{ miFormulario.touched }}</pre>
+
+<span>Value</span>
+<pre>{{ miFormulario.value | json }}</pre>
+
+<span>Dirty</span>
+<pre>{{ miFormulario.dirty }}</pre>
+
+<span>Errors</span>
+<pre>{{ miFormulario.controls['nacimiento'].errors | json }}</pre>
+</div>

@@ -1,0 +1,7 @@
+<h3>La base es: </h3>
+<input [(ngModel)]="base" type="number">
+<hr>
+<button (click)="cambiarContador(-base)"> - {{ base }} </button>
+<span> {{ contador }} </span>
+<button (click)="cambiarContador(+base)"> + {{ base }}</button>
+
