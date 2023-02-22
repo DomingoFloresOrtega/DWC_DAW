@@ -1,0 +1,75 @@
+<h2>Registrar nuevo cliente</h2>
+<hr>
+
+<div class="row">
+  <div class="col ml-3">
+    <form autocomplete="off">
+
+      <!-- Campo de Nombre -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+          <input type="text"
+                  class="form-control"
+                  placeholder="Nombre del cliente"
+                  formControlName="nombre">
+
+        </div>
+      </div>
+
+      <!-- Campo de Edad -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Edad</label>
+        <div class="col-sm-9">
+          <input type="number"
+                  class="form-control"
+                  placeholder="Edad del cliente"
+                  formControlName="edad">
+
+        </div>
+      </div>
+
+      <!-- Campo de Genero -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Género</label>
+        <div class="col-sm-9">
+
+          <div class="form-check">
+            <input  class="form-check-input"
+                    type="radio"
+                    value="M"
+                    id="radioMasculino"
+                    name="flexRadioDefault">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Masculino
+            </label>
+          </div>
+          <div class="form-check">
+            <input  class="form-check-input"
+                    type="radio"
+                    value="F"
+                    id="radioFemenino"
+                    name="flexRadioDefault">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Femenino
+            </label>
+          </div>
+
+        </div>
+
+    </div>
+
+      <!-- Boton Guardar -->
+      <div class="row">
+        <div class="col">
+          <button type="submit"
+                  class="btn btn-primary float-end">
+                  Registrar
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

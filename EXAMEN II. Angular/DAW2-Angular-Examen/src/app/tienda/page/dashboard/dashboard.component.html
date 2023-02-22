@@ -1,0 +1,52 @@
+<h2>Dashboard</h2>
+<hr>
+
+<div class="row">
+
+  <div class="col-6 ml-3">
+    <h3>Productos disponibles</h3>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productos">
+          <th scope="row">1</th>
+          <td>{{ item.nombre | titlecase }}</td>
+          <td>{{ item.precio | currency:'EUR' }}</td>
+          <td>{{ item.cantidad | number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-6">
+    <h3>Lista de Clientes</h3>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Detalles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of clientes">
+          <th scope="row">0</th>
+          <td>{{ item.nombre | titlecase }}</td>
+          <td>{{ item.edad }}</td>
+          <td><a [routerLink]="['nombre', item.nombre]">Ver...</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
