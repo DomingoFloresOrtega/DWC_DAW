@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col">
+
+    <!-- Muestra información sobre el viaje que se va a reservar -->
+    <h3>Viaje a reservar</h3>
+    <hr>
+    <ul class="list-group col-6">
+      <li class="list-group-item">
+        <strong>ID: </strong>
+        <span class="badge bg-primary p-2"> {{viajesID.id}} </span>
+      </li>
+      <li class="list-group-item">
+        <strong>Destino:  </strong>
+        <span class="badge bg-primary p-2"> {{viajesID.destino | titlecase}} </span>
+      </li>
+      <li class="list-group-item">
+        <strong>Número de dias:  </strong><span class="badge bg-primary p-2"> {{viajesID.numDias}}</span>
+      </li>
+      <li class="list-group-item">
+        <strong>Plazas disponibles:  </strong>
+        <span class="badge bg-primary p-2"> {{viajesID.plazas}}</span>
+
+      </li>
+    </ul>
+  </div>
+</div>
+<hr>
+
+<!-- Input y botón para reservar el viaje a un ID de viajero -->
+<div class="row">
+  <div class="col" *ngIf="!viajeroExiste">
+    <p>El viajero no existe</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <span>Introduce el ID del viajero: </span>
+    <input  type="number" style="width: 3em;"
+            [(ngModel)]="viajeroID">
+    <button type="button"
+            class="btn btn-primary"
+            (click)="reservar()">
+      Reservar
+    </button>
+  </div>
+</div>
+
+<!-- Mensajes tanto de error como de éxito que se devuelven al pulsar el botón Reservar-->
+<div class="row mt-3">
+  <div class="col">
+    <span *ngIf="viajeroExiste" class="alert alert-danger">
+      El viajero ya ha reservado este viaje
+    </span>
+    <span *ngIf="noPlazas" class="alert alert-danger">
+      No hay plazas disponibles para este viaje
+    </span>
+    <span *ngIf="reservado" class="alert alert-success">
+      Viaje reservado con éxito
+    </span>
+
+  </div>
+</div>
+
+<!-- Lista de viajeros para poder saber cuál es el ID que hay que usar para reservar -->
+<div class="row mt-3">
+  <div class="col-6">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let viajero of viajeros">
+          <th scope="row">{{ viajero.id }}</th>
+          <td>{{ viajero.nombre | titlecase}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
