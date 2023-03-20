@@ -1,0 +1,31 @@
+<h1>Calculadora</h1>
+
+<select name="valor" [(ngModel)]="valor">
+  <option value="+">Sumar</option>
+  <option value="-">Restar</option>
+  <option value="/">Dividir</option>
+  <option value="*">Multiplicar</option>
+</select>
+
+<p>Valor 1:</p>
+<input type="number" name="v1" [(ngModel)]="n1"/> <!-- [()] bidireccional | [] unidireccional-->
+
+<p>Valor 2:</p>
+<input type="number" name="v2" [(ngModel)]="n2">
+
+<div [ngSwitch]="valor"> <!-- seleccion del valor-->
+  <p *ngSwitchCase="'+'">
+    <button (click)="sumar()">Sumar</button>
+  </p>
+  <p *ngSwitchCase="'-'">
+    <button (click)="restar()">Restar</button>
+  </p>
+  <p *ngSwitchCase="'*'">
+    <button (click)="multiplicar()">Multiplicar</button>
+  </p>
+  <p *ngSwitchCase="'/'">
+    <button (click)="dividir()">Dividir</button>
+  </p>
+</div>
+
+<p>Resultado: {{resultados}}</p>
