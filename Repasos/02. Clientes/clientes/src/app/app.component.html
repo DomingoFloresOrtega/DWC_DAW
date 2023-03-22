@@ -3,57 +3,11 @@
     <h1>Alta Cliente</h1>
   </div>
 
-  <div class="row">
-    <div class="col-2">
-      <p>Nombre:</p>
-    </div>
-    <div class="col-2">
-      <input type="text" name="name" [(ngModel)]="nuevo.nombre">
-    </div>
+  <div>
+    <app-insertar-clientes></app-insertar-clientes>
   </div>
 
-  <div class="row">
-    <div class="col-2">
-      <p>CIF:</p>
-    </div>
-    <div class="col-2">
-      <input type="text" name="cif" [(ngModel)]="nuevo.cif" />
-    </div>
+  <div>
+    <app-listar-clientes></app-listar-clientes>
   </div>
-
-  <div class="row">
-    <div class="col-2">
-      <p>Direccion:</p>
-    </div>
-
-    <div class="col-2">
-      <input type="text" name="dir" [(ngModel)]="nuevo.direccion" />
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <p>Grupo:</p>
-    </div>
-
-    <div class="col-2">
-      <select name="grupo" [(ngModel)]="nuevo.grupo">
-        <option value="0">Sin definir</option>
-        <option value="1">Grupo 1</option>
-      </select>
-    </div>
-  </div>
-
-  <button class="rounded" name="save" (click)="agregar()">Guardar</button>
-
-  <table class="table mt-3">
-    <tbody>
-      <tr *ngFor="let item of clientes">
-        <th scope="row">{{item.nombre}}</th>
-        <td>{{item.cif}}</td>
-        <td>{{item.direccion}}</td>
-        <td>{{item.grupo}}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>

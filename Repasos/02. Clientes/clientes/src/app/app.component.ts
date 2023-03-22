@@ -10,29 +10,6 @@ import { ServiceService } from './service.service';
 export class AppComponent {
   title = 'clientes';
 
-  get clientes() {
-    return this.clientesService.clientes;
-  };
-
-  nuevo: Cliente = {
-    nombre: '',
-    cif: '',
-    direccion: '',
-    grupo: 0
-  }
-
-  constructor( private clientesService: ServiceService){}
-
-  agregar() {
-
-    this.clientesService.agregarCliente( this.nuevo );
-
-    this.nuevo = {
-      nombre: '',
-      cif: '',
-      direccion: '',
-      grupo: 0
-    };
-  }
+  constructor(  private clienteService: ServiceService ){}
 
 }

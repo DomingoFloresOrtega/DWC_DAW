@@ -11,7 +11,10 @@ export class ServiceService {
       nombre: 'Maroma',
       cif: 'A3333',
       direccion: 'C/ San San',
-      grupo: 1
+      grupo: {
+        id: 1,
+        nombre: ''
+      }
     }
   ];
 
