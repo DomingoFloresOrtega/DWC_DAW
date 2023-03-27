@@ -9,3 +9,11 @@ export interface Grupo {
   id: number;
   nombre: string;
 }
+
+export interface Empresa {
+  id: string
+  denominacion: string
+  tipoDenominacion:	string
+  denominacionBusqueda: string
+  provincia: string
+}

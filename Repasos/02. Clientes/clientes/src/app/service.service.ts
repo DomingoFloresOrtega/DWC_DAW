@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cliente } from './cliente.interface';
+import { Cliente, Empresa } from './cliente.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +18,22 @@ export class ServiceService {
     }
   ];
 
+  private _empresas: Empresa[] = [
+
+  ];
+
   get clientes(): Cliente[] {
     return [...this._clientes]
   }
 
-  constructor() {}
+  get empresasonline(): Empresa[] {
+    return [...this._empresas]
+  }
+
+  constructor() {this._clientes = JSON.parse(localStorage.getItem('clientes')!) || this._clientes} // get siempre en constructor
 
   agregarCliente( cliente: Cliente ) {
     this._clientes.push(cliente);
+    localStorage.setItem('clientes', JSON.stringify(this.clientes)) // set en punto especifico | al agregar cliente
   }
 }
