@@ -1,0 +1,23 @@
+<div class="row m-2">
+    <h1 class="alert alert-primary">{{ cliente.nombre }}</h1>
+    <div class="col-12 d-flex">
+      <div class="col-3 alert alert-warning me-2">
+        <h3>Edad: {{ cliente.edad }}</h3>
+        <h3>Genero: {{ cliente.genero }}</h3>
+      </div>
+
+      <div class="col-8 alert alert-secondary">
+        <h3>Carrito</h3>
+        <table class="table">
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+          <tr *ngFor="let item of cliente.carrito">
+            <td>{{ item.producto }}</td>
+            <td>{{ item.cantidad }}</td>
+          </tr>
+        </table>
+      </div>
+  </div>
+</div>
