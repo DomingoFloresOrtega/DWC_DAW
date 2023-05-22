@@ -1,0 +1,20 @@
+<table class="table table-striped text-center">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Destino</th>
+      <th scope="col">Días</th>
+      <th scope="col">Plazas disponibles</th>
+      <th scope="col">Reservar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of viajes">
+      <td>{{item.id}}</td>
+      <td>{{item.destino | titlecase}}</td>
+      <td>{{item.numDias}}</td>
+      <td>{{item.plazas - item.viajeros.length}}</td>
+      <td><a [routerLink]="['/reservar',item.id]">Reservar...</a></td>
+    </tr>
+  </tbody>
+</table>
